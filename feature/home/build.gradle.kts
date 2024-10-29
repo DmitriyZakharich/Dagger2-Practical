@@ -35,6 +35,8 @@ android {
 
 dependencies {
 
+    implementation(project(":core"))
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -44,4 +46,6 @@ dependencies {
 
     implementation (libs.dagger)
     kapt (libs.dagger.compiler)
+
+    implementation (libs.androidx.lifecycle.viewmodel.ktx)
 }

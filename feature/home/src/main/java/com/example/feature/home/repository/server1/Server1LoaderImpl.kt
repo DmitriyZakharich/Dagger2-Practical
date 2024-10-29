@@ -1,15 +1,17 @@
-package com.example.core.network.server1
+package com.example.feature.home.repository.server1
 
 import com.example.core.BuildConfig
+import com.example.core.api.ApiService1
 import com.example.core.di.Server1Qualifier
-import com.example.core.models.toData1
-import com.example.feature.home.models.Data1
-import com.example.feature.home.repository.Server1Loader
+import com.example.feature.home.domain.models.Data1
+import com.example.feature.home.domain.models.toData1
+import com.example.feature.home.domain.repository.Server1Loader
 import kotlinx.coroutines.delay
 import retrofit2.Retrofit
 import javax.inject.Inject
 
-class Server1LoaderImpl @Inject constructor(@Server1Qualifier val retrofit: Retrofit) : Server1Loader {
+class Server1LoaderImpl @Inject constructor(@Server1Qualifier val retrofit: Retrofit) :
+    Server1Loader {
 
     override suspend fun loadData(): Data1 {
         return if (BuildConfig.DEBUG){

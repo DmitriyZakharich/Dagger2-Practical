@@ -9,7 +9,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
-        android:name="com.example.dagger2practicalblock.presentation.MainFragment"
+        android:name="com.example.feature.home.presentation.FeatureFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </FrameLayout>

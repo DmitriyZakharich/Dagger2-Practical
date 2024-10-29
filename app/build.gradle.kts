@@ -54,5 +54,4 @@ dependencies {
     kapt (libs.dagger.compiler)
 
     implementation (libs.androidx.lifecycle.viewmodel.ktx)
-
 }

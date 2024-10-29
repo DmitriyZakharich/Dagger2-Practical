@@ -1,20 +1,15 @@
 package com.example.dagger2practicalblock
 
 import android.app.Application
+import com.example.core.di.CoreComponent
 import com.example.core.di.DaggerCoreComponent
-import com.example.dagger2practicalblock.di.AppComponent
-import com.example.dagger2practicalblock.di.DaggerAppComponent
+import com.example.feature.home.di.DaggerFeatureComponent
+import com.example.feature.home.di.FeatureComponent
+import com.example.feature.home.presentation.CoreComponentProvider
 
-class MyApp : Application() {
+class MyApp : Application(), CoreComponentProvider {
 
-    lateinit var appComponent: AppComponent
-
-    override fun onCreate() {
-        super.onCreate()
-
-        val coreComponent = DaggerCoreComponent.builder().build()
-        appComponent = DaggerAppComponent
-            .builder().coreComponent(coreComponent)
-            .build()
+    override val coreComponent: CoreComponent by lazy {
+        DaggerCoreComponent.builder().build()
     }
 }
