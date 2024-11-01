@@ -8,17 +8,17 @@ import dagger.Binds
 import dagger.Module
 
 @Module
-abstract class FeatureModule {
+interface FeatureModule {
 
     @FeatureScope
     @Binds
-    abstract fun bindServer1Loader(
+    fun bindServer1Loader(
         server1LoaderImpl: Server1LoaderImpl
     ): Server1Loader
 
     @FeatureScope
     @Binds
-    abstract fun bindServer2Loader(
+    fun bindServer2Loader(
         server2LoaderImpl: Server2LoaderImpl
     ): Server2Loader
 }
